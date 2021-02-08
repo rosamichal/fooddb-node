@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 // routes
 const ingredientRouter = require('./routes/ingredientRoute');
-app.use('/', ingredientRouter);
+app.use('/api/', ingredientRouter);
 
 // server
 app.listen(port, () => {console.log(`Server is running... http://localhost:${port}`);});
