@@ -38,7 +38,6 @@ module.exports = {
 	async addManyIngredients(req, res) {
 		try {
 			const ingredients = req.body;
-			console.log('ingredients :>> ', ingredients);
 			Ingredient.insertMany(ingredients);
 			res.send('OK');
 		}
