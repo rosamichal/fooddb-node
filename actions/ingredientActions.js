@@ -23,12 +23,24 @@ module.exports = {
 		}
 	},
 
-	async saveIngredient(req, res) {
+	async addIngredient(req, res) {
 		try {
 			const data = req.body;
 			const newIngredient = new Ingredient(data);
 			await newIngredient.save();
 			res.send(newIngredient);
+		}
+		catch (err) {
+			console.error(err);
+		}
+	},
+
+	async addManyIngredients(req, res) {
+		try {
+			const ingredients = req.body;
+			console.log('ingredients :>> ', ingredients);
+			Ingredient.insertMany(ingredients);
+			res.send('OK');
 		}
 		catch (err) {
 			console.error(err);

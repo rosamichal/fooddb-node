@@ -7,7 +7,9 @@ router.get('/ingredients/', ingredientActions.getAllIngredients);
 
 router.get('/ingredients/:id', ingredientActions.getIngredient);
 
-router.post('/ingredients/', ingredientActions.saveIngredient);
+router.post('/ingredients/', ingredientActions.addIngredient);
+
+router.post('/ingredients/addMany', ingredientActions.addManyIngredients);
 
 router.put('/ingredients/:id', ingredientActions.updateIngredient);
 
