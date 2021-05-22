@@ -1,7 +1,11 @@
 const express = require('express');
+const cors = require('cors')
+const bodyParser = require('body-parser');
+const { port } = require('./config');
+
 const app = express();
-const{ port } = require('./config');
-var bodyParser = require('body-parser');
+
+app.use(cors())
 
 // db
 require('./db/mongoose');
@@ -14,4 +18,4 @@ const ingredientRouter = require('./routes/ingredientRoute');
 app.use('/api/', ingredientRouter);
 
 // server
-app.listen(port, () => {console.log(`Server is running... http://localhost:${port}`);});
+app.listen(port, () => { console.log(`Server is running... http://localhost:${port}`); });
