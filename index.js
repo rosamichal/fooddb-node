@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: "https://fooddb-manager.herokuapp.com",
+        origin: ["https://fooddb-manager.herokuapp.com", "https://ketokalkulator.herokuapp.com"],
     })
 );
 
